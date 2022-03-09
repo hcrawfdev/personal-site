@@ -1,0 +1,124 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* END RESET */
+
+/* 320px — 480px: Mobile devices.
+481px — 768px: iPads, Tablets.
+769px — 1024px: Small screens, laptops.
+1025px — 1200px: Desktops, large screens.
+1201px and more — Extra large screens, TV. */
+
+body {
+    background-color:rgb(71 85 105);
+    padding:5px;
+}
+
+
+#root-container {
+    width:100vw;
+    height: 100vh;
+    background-color:rgb(71 85 105);
+    display:grid;
+    justify-content: center;
+    grid-template-areas: "
+                            'header' 'header' 'header'
+                            'content' 'content' 'content'
+                         "
+}
+
+
+#name-title {
+    font-family: 'Major Mono Display';
+    font-size: 5rem;
+    color: rgb(241 245 249);
+    text-align: center;
+}
+
+#media-links {
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+}
+
+.media-link {
+    font-family: 'Major Mono Display';
+    color: rgb(241 245 249);
+    text-decoration: none;
+    font-size: 4rem;
+    width: 100%;
+    text-align: center;
+}
+
+
+.title {
+    grid-area: 'header';
+}
+
+
+@media (max-width: 768px) {
+    #name-title {
+      font-size: 3.3rem;
+    }
+
+    #media-links{
+        flex-direction:column;
+        align-items:center;
+        justify-content: flex-start;
+    }
+
+    .media-link {
+        margin-top: 3rem;
+        margin-bottom: 3rem;
+    } 
+
+    #root-container {
+        grid-template-rows: 1fr 3fr;
+    }
+  }
